@@ -13,10 +13,238 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(-45deg, #e3eefe 0%, #efddfb 100%);
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    position: relative; 
+    
+  }
+
+  .frame {
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    text-align: center;
+  }
+
+  h2 {
+    position: relative;
+    text-align: center;
+    color: #353535;
+    font-size: 60px;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    color: #a759f5;
+  }
+
+  p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    font-size: 30px;
+    color: #d6adff;
+    margin: 0;
+  }
+
+  #responseContainer {
+    margin-top: 20px;
+    min-height: 280px;
+  }
+
+  .response {
+    margin-top: 20px;
+  }
+  
+
+@media(max-width: 860px) {
+  /* Adjustments for header */
+  .heading h1 {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    margin-left: 15px;
+    font-size: xx-large;
+  }
+
+  .heading p {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    margin-left: 7px;
+    font-size: x-large;
+    margin-top: 50px;
+  }
+
+
+  header, #btn, #cancel {
+    display:block;
+   
+  }
+
+
+  label #btn,
+label #cancel {
+  position: absolute;
+  left: 5px;
+  cursor: pointer;
+  color: #d6adff;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: #e8d1ff;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5), inset -7px -7px 10px 0px rgba(0, 0, 0, .1), 3.5px 3.5px 20px 0px rgba(0, 0, 0, .1), 2px 2px 5px 0px rgba(0, 0, 0, .1);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  line-height: 45px;
+  margin-left: -5px;
+  transition: all .5s ease;
+}
+
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+}
+}
+
+
+
+.frame {
+width: 50%;
+height: 30%;
+margin: auto;
+text-align: center;
+}
+
+h2 {
+position: relative;
+text-align: center;
+color: #353535;
+font-size: 60px;
+font-family: 'Lato', sans-serif;
+margin: 0;
+color: #a759f5;
+}
+
+p {
+font-family: 'Lato', sans-serif;
+font-weight: 300;
+text-align: center;
+font-size: 30px;
+color: #d6adff;
+margin: 0;
+}
+/* custom css */
+.resi {
+  width: 90%;
+  max-height: calc(100vh - 280px);
+  margin-top: 280px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  position: fixed;
+  overflow-y: auto;
+  top: 0;
+}
+
+
+.heading {
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  text-align: center;
+  z-index: 999;
+}
+
+.inputbox {
+  display: flex;
+  margin-top: 200px;
+  justify-content: center;
+  align-items: center;
+  width: 200%;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  z-index: 999;
+}
+
+.inputbox form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.inputbox form input[type="text"] {
+  flex: 1;
+  border: none;
+  height: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  outline: none;
+ 
+}
+
+.inputbox form button {
+  flex: 0;
+  margin-left: 10px;
+}
+
+#clearButton {
+  margin-left: 25px;
+}
+
+
+
+.logo_item span {
+  font-size: 18px;
+}
+
+.navbar_content {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.navbar_content i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 15px;
+  }
+  
+  .logo_item {
+    font-size: 18px;
+  }
+  
+  .navbar_content i {
+    font-size: 18px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -51,7 +279,64 @@
   <hr>
   <hr>
   <hr>
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+  function handleSubmit(question) {
+    var formData = new FormData();
+    formData.append('question', question);
+    document.getElementById('questionInput').value = '';
+    var userQuestionElement = document.createElement('div');
+    userQuestionElement.className = 'response';
+    userQuestionElement.innerHTML = "<h3>You:</h3>" + question;
+    document.getElementById('responseContainer').appendChild(userQuestionElement);
+    document.getElementById('responseContainer').scrollTop = document.getElementById('responseContainer').scrollHeight;
+    fetch('/ask', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        var serverResponseElement = document.createElement('div');
+        serverResponseElement.className = 'response';
+        serverResponseElement.innerHTML = "<h3>MarkGPT:</h3> " + data;
+        document.getElementById('responseContainer').appendChild(serverResponseElement);
+        document.getElementById('responseContainer').scrollTop = document.getElementById('responseContainer').scrollHeight;
+    });
+}
+
+function validateForm() {
+    var questionInput = document.getElementById('questionInput').value.trim();
+    if (questionInput === '') {
+        alert('Please enter your question');
+        return false;
+    }
+    return true;
+}
+
+function askQuestion() {
+    var questionInput = document.getElementById('questionInput').value.trim();
+    if (questionInput === '') {
+        alert('Please enter your question');
+        return;
+    }
+    handleSubmit(questionInput);
+}
+
+document.getElementById('questionInput').addEventListener('input', function() {
+    if (this.value === '') {
+        document.getElementById('responseContainer').innerHTML = '';
+    }
+});
+
+document.getElementById('clearButton').addEventListener('click', function() {
+    document.getElementById('responseContainer').innerHTML = '';
+});
+
+document.getElementById('questionForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    askQuestion();
+});
+
+</script>
   <script src="https://kit.fontawesome.com/181ea7bd20.js" crossorigin="anonymous"></script>
   
 </body>
